@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        margin: auto;
+      }
+
+      #button {
+        text-align: center;
+      }
+
+      table label {
+        text-align: end;
+      }
+
+      table input {
+        text-align: start;
+      }
+
+      td {
+        padding: 10px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Task 5</h1>
+    <div class="container">
+      <table>
+        <tr>
+          <td>
+            <label for="name">Name</label>
+          </td>
+          <td>
+            <input type="text" id="name" />
+          </td>
+          <td>
+            <span id="name-invalid"></span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="email">Email</label>
+          </td>
+
+          <td>
+            <input type="email" id="email" />
+          </td>
+
+          <td>
+            <span id="email-invalid"></span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="website">Website</label>
+          </td>
+
+          <td>
+            <input type="text" id="website" />
+          </td>
+          <td>
+            <span id="website-invalid"></span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="message">Message</label>
+          </td>
+          <td>
+            <textarea id="message" rows="3" cols="23"></textarea>
+          </td>
+          <td>
+            <span id="message-invalid"></span>
+          </td>
+        </tr>
+        <tr id="button">
+          <td colspan="2">
+            <button type="submit" onclick="validate()">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function validate() {
+        if (document.getElementById("name").value == "") {
+          document.getElementById("name-invalid").innerHTML =
+            "This field is required";
+          document.getElementById("name-invalid").style.color = "red";
+          document.getElementById("name").style.border = "2px solid red";
+        }
+
+        var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        if (!emailRegex.test(document.getElementById("email").value)) {
+          document.getElementById("email-invalid").innerHTML =
+            "A valid email address is required";
+          document.getElementById("email-invalid").style.color = "red";
+          document.getElementById("email").style.border = "2px solid red";
+          document.getElementById("email").value = "";
+        } else if (document.getElementById("email").value == "") {
+          document.getElementById("email-invalid").innerHTML =
+            "This field is required";
+          document.getElementById("email-invalid").style.color = "red";
+          document.getElementById("email").style.border = "2px solid red";
+        }
+
+        var urlRegex = /^(http|https):\/\/[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+[^\s]*$/;
+        if (!urlRegex.test(document.getElementById("website").value)) {
+          document.getElementById("website-invalid").innerHTML =
+            "A valid url is required";
+          document.getElementById("website-invalid").style.color = "red";
+          document.getElementById("website").style.border = "2px solid red";
+          document.getElementById("website").value = "";
+        } else if (document.getElementById("website").value == "") {
+          document.getElementById("website-invalid").innerHTML =
+            "This field is required";
+          document.getElementById("website-invalid").style.color = "red";
+          document.getElementById("website").style.border = "2px solid red";
+        }
+
+        if (document.getElementById("message").value == "") {
+          document.getElementById("message-invalid").innerHTML =
+            "This field is required";
+          document.getElementById("message-invalid").style.color = "red";
+          document.getElementById("message").style.border = "2px solid red";
+        }
+      }
+    </script>
+  </body>
+</html>

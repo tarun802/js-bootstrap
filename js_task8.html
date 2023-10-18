@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: radial-gradient(circle at center top, lightyellow, violet);
+        height: 100vh;
+        margin: 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      h1 {
+        text-align: center;
+        color: blue;
+      }
+      form {
+        margin-top: 0px;
+      }
+
+      table,
+      td,
+      tr {
+        text-align: center;
+        font-weight: 700;
+        padding-bottom: 10px;
+      }
+
+      table {
+        margin: auto;
+        width: 800px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 20px 10px 20px;
+        background-color: red;
+        color: white;
+        border: 3px solid black;
+        border-radius: 15px;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        text-decoration: underline;
+      }
+
+      .button {
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        width: 650px;
+      }
+
+      .lefttext {
+        font-weight: 200;
+        text-align: left;
+      }
+
+      tr div {
+        margin-left: 10px;
+      }
+
+      .invalid {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form action="">
+      <table>
+        <tr>
+          <td>
+            <label for="firstname">First Name:</label>
+          </td>
+          <td>
+            <input type="text" placeholder="Enter first name" id="firstname" />
+          </td>
+
+          <td>
+            <div class="invalid" id="invalid-fname"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="lastname">Last Name:</label>
+          </td>
+          <td>
+            <input type="text" placeholder="Enter last name" id="lastname" />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-lname"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="email" placeholder="Enter email" id="email" />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-email"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="password">Password:</label>
+          </td>
+          <td>
+            <input type="password" placeholder="Enter password" id="password" />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-password"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="repassword">Re-enter Password:</label>
+          </td>
+          <td>
+            <input
+              type="password"
+              placeholder="Re-enter password"
+              id="repassword"
+            />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-repassword"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">
+            <label for="gender">Gender:</label>
+          </td>
+          <td class="lefttext">
+            <input type="radio" id="male" name="gender" />
+            <label for="male">Male</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="lefttext">
+            <input type="radio" id="female" name="gender" />
+            <label for="female">Female</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="age">Age:</label>
+          </td>
+          <td>
+            <input type="text" placeholder="Enter age" id="age" />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-age"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="phonenumber">Phone Number:</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter phone number"
+              id="phonenumber"
+            />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-phone"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="address">Address:</label>
+          </td>
+          <td>
+            <textarea id="address" cols="83" rows="5"></textarea>
+          </td>
+          <td>
+            <div class="invalid" id="invalid-address"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="state">State:</label>
+          </td>
+          <td>
+            <input type="text" placeholder="Enter state" id="state" />
+          </td>
+          <td>
+            <div class="invalid" id="invalid-state"></div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="country">Country</label>
+          </td>
+          <td class="lefttext">
+            <select name="country" id="country">
+              <option>Choose your country</option>
+              <option value="India">India</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Afhanistan">Afghanistan</option>
+              <option value="Tibet">Tibet</option>
+              <option value="China">China</option>
+              <option value="Pakistan">Pakistan</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="">Languages Known</label>
+          </td>
+
+          <td class="lefttext">
+            <input type="checkbox" id="english" />
+            <label for="english">English</label>
+            <input type="checkbox" id="kannada" />
+            <label for="kannada">Kannada</label>
+            <input type="checkbox" id="Hindi" />
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="Telugu" />
+            <label for="telugu">Telugu</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="lefttext" colspan="2">
+            <input type="checkbox" id="declaration" />
+            <label for="declaration"
+              >Hereby I declare all the given details are true</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" style="text-align: right">
+            Log in to <a href="">Ethnus</a> website
+          </td>
+        </tr>
+      </table>
+
+      <div class="button">
+        <button type="button" onclick="validate()">REGISTER</button>
+      </div>
+    </form>
+
+    <script>
+      function validate() {
+        var fname = document.getElementById("firstname");
+        var lname = document.getElementById("lastname");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var repassword = document.getElementById("repassword");
+        var age = document.getElementById("age");
+        var phoneNumber = document.getElementById("phonenumber");
+        var address = document.getElementById("address");
+        var state = document.getElementById("state");
+
+        if (fname.value.length < 3) {
+          document.getElementById("invalid-fname").innerHTML = "POOR";
+        }
+
+        if (lname.value.length < 3) {
+          document.getElementById("invalid-lname").innerHTML = "POOR";
+        }
+
+        if (email.value.length < 5) {
+          document.getElementById("invalid-email").innerHTML = "POOR";
+        }
+
+        if (password.value.length < 8) {
+          document.getElementById("invalid-password").innerHTML = "POOR";
+          document.getElementById("invalid-repassword").innerHTML =
+            "POOR OR MISMATCH";
+        }
+
+        if (repassword.value != password.value) {
+          document.getElementById("invalid-repassword").innerHTML =
+            "POOR OR MISMATCH";
+        }
+
+        if (age.value.length != 2) {
+          document.getElementById("invalid-age").innerHTML = "POOR";
+        }
+
+        if (phoneNumber.value.length != 10) {
+          document.getElementById("invalid-phone").innerHTML = "POOR";
+        }
+
+        if (address.value.length < 25) {
+          document.getElementById("invalid-address").innerHTML = "POOR";
+        }
+
+        if (state.value.length < 3) {
+          document.getElementById("invalid-state").innerHTML = "POOR";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      h1 {
+        text-align: center;
+        display: block;
+      }
+
+      .container {
+        width: 50%;
+        margin: auto;
+      }
+
+      .container label {
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .container input {
+        padding: 5px;
+        margin: 10px;
+      }
+
+      .container button {
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Task 3</h1>
+    <div class="container">
+      <form>
+        <label for="num1">1st Number: </label>
+        <input type="text" name="num1" id="num1" />
+        <br />
+        <label for="num2">2nd Number: </label>
+        <input type="text" name="num2" id="num2" />
+        <br />
+        <button type="submit" onclick="multiply(); return false;">
+          Multiply
+        </button>
+        <button type="submit" onclick="divide(); return false;">Divide</button>
+      </form>
+
+      <p>Result:</p>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function display(message) {
+        console.log(message);
+        var result = document.getElementById("result");
+        result.innerHTML = message;
+      }
+      function multiply() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        if (isNaN(num1) || isNaN(num2)) {
+          display("Please enter valid numbers.");
+          return;
+        }
+
+        var result = num1 * num2;
+        display(result);
+      }
+
+      function divide() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        if (isNaN(num1) || isNaN(num2)) {
+          display("Please enter valid numbers.");
+          return;
+        }
+
+        if (num2 === 0) {
+          display("Division by zero is not allowed.");
+          return;
+        }
+
+        var result = num1 / num2;
+        display(result);
+      }
+    </script>
+  </body>
+</html>

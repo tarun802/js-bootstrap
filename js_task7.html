@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      #train {
+        width: 250px;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        transition: left 5s linear;
+      }
+
+      .container-fluid {
+        height: 20vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center my-5">JS Task 7</h1>
+    <div class="container-fluid">
+      <img id="train" src="./images/train.png" alt="Train" />
+    </div>
+    <div class="container text-center">
+      <h1 class="text-center my-5">
+        Click the following buttons to handle animation
+      </h1>
+      <button
+        type="button"
+        id="start-btn"
+        class="btn btn-success px-4 py-2 m-5"
+      >
+        Start
+      </button>
+      <button type="button" id="stop-btn" class="btn btn-danger px-4 py-2 m-5">
+        Stop
+      </button>
+
+      <button
+        type="button"
+        id="reset-btn"
+        class="btn btn-primary px-4 py-2 m-5"
+      >
+        Reset
+      </button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var train = document.getElementById("train");
+      var startBtn = document.getElementById("start-btn");
+      var stopBtn = document.getElementById("stop-btn");
+      var resetBtn = document.getElementById("reset-btn");
+
+      var isMoving = false;
+      var reset = false;
+      var currentLeft = 0;
+      var trainWidth = train.offsetWidth;
+      var windowWidth = window.innerWidth;
+
+      startBtn.addEventListener("click", () => {
+        if (reset) {
+          train.style.transition = "left 5s linear";
+          reset = false;
+        }
+        if (!isMoving) {
+          train.style.left = windowWidth - trainWidth + "px";
+          isMoving = true;
+        }
+      });
+
+      stopBtn.addEventListener("click", () => {
+        if (isMoving) {
+          currentLeft = parseFloat(getComputedStyle(train).left);
+          train.style.left = currentLeft + "px";
+          isMoving = false;
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        if (!isMoving) {
+          train.style.transition = "left 0s linear";
+          train.style.left = "0";
+          isMoving = false;
+          reset = true;
+        }
+      });
+    </script>
+  </body>
+</html>
